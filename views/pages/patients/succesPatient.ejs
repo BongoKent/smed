@@ -1,0 +1,49 @@
+<%- include('../../fragments/header.ejs') %>
+
+
+    <main>
+        <h2><%= __('list.patient.Title') %></h2>
+        <% if (patients.length && patients.length > 0) { %>
+
+        <table class="table-list">
+
+            <thead>
+                <tr>
+                    <th><%= __('doc.fields.firstName') %></th>
+                    <th><%= __('doc.fields.LastName') %></th>
+                    <th><%= __('list.actions.disease') %></th>
+                    <th><%= __('list.actions.title') %></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% for (let patient of patients) { %>
+                <tr>
+                    <td><%= patient.Name %></td>
+                    <td><%= patient.LastName %></td>
+                    <td><%= patient.Disease %></td>
+                    <td>
+                        <a href="/patients/edit/<%= patient.IdPatient %>" class="buttonR button1"><%= __('list.actions.edit') %></a>
+                        <a href="" class="buttonR button1" onclick="var r = window.confirm('Czy napewno?') ; if(r) href ='/patients/delete/<%=patient.IdPatient%>'; else href='javascript:history.go(0)'; " ><%= __('list.actions.delete') %></a>
+
+                    </td>
+                </tr>
+            <%}%>
+
+            </tbody>
+        </table>
+        <% } else { %>
+            <p> <%= __('list.actions.patientNull') %> </p>
+            <% } %>
+        <br>
+        <a href="add" class="buttonR button1">
+            <%= __('list.actions.addPatient') %>
+        </a>
+
+        <p class="succesForm">  <%= __('list.succes') %> 
+        </p>
+        
+    </main>
+
+    <%- include('../../fragments/footer.ejs') %>
+    

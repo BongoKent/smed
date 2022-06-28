@@ -1,0 +1,221 @@
+{
+	"main-page": {
+		"title": "S-Med clinic Warsaw",
+		"content": "Our clinic has been operating since 1998. We want to provide our patients with medical care at the highest level. At present, S-Med employs 100 doctors, including 10 professors. Our staff includes outstanding specialists with many years of experience. We have a modern, well-equipped operating room and first-class diagnostic equipment. Our facility is open 6 days a week from 7:00 am to 8:00 pm. We invite you to use our services.",
+		"titleFooter": "S-Med Warsaw",
+		"login": "Login",
+		"email": "E-mail: ",
+		"password": "Password: ",
+		"loginsie": "Login",
+		"register": "Sign up",
+		"looggedas": "Logged as: ",
+		"logout": "Logout"
+	},
+	"nav": {
+		"main-page": "Main page",
+		"doctors": "Doctors",
+		"visits": "Visits",
+		"patients": "Patients",
+		"meds": "Medical Services",
+		"rea": "Realizations"
+	},
+	"list": {
+		"actions": {
+			"title": "Actions",
+			"details": "Details",
+			"edit": "Edit",
+			"delete": "Delete",
+			"disease": "Disease",
+			"addPatient": "Add patient",
+			"patientNull": "No patients in the base",
+			"editAdmin": "Edit admin"
+		},
+		"succes": "The operation was successful!",
+		"patient": {
+			"Title": "Patient list"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Return",
+			"edit": "Edit",
+			"cancel": "Cancel"
+		},
+		"edit": "Edit doctor",
+		"addNew": "Add doctor",
+		"editDoc": "Edit doctor",
+		"addNewRegister": "Register"
+	},
+	"doc": {
+		"fields": {
+			"firstName": "First name",
+			"LastName": "Last name",
+			"Specialization": "Specialization"
+		},
+		"list": {
+			"title": "Employees",
+			"addNew": "Add new employee",
+			"noData": "No employees in database",
+			"pageTitle": "List of doctors",
+			"list": "Doctors list"
+		},
+		"form": {
+			"employment": "History of employment",
+			"add": {
+				"pageTitle": "Adding a new doctor",
+				"btnLabel": "Add the employee",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The new employee has been successfully created"
+				},
+				"pageTitleRegister": "Registration"
+			},
+			"edit": {
+				"pageTitle": "Editing an doctor",
+				"btnLabel": "Save changes",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The employee has been successfully updated"
+				}
+			},
+			"details": {
+				"pageTitle": "Doctor's details"
+			},
+			"addNew": "Add doctor",
+			"register": {
+				"pageTitle": "Sing up"
+			}
+		},
+		"add": "Add doctor",
+		"title": "doc.title",
+		"empty": "No doctors in the base",
+		"error": {
+			"req": "Field is required",
+			"sal": "Fill data about salary",
+			"data": "Enter correct date",
+			"znakimin": "Minimum 3 chars",
+			"znakimax": "Max 30 chars",
+			"email": "Enter correct email"
+		}
+	},
+	"ppl": {
+		"name": "Name: *",
+		"lastname": "LastName: *",
+		"salary": "Salary: *",
+		"spec": "Specialization: ",
+		"date": "Employment date: *",
+		"optional": "optional",
+		"chars": "3-30 chars",
+		"sal": "value",
+		"ill": "Disease: ",
+		"email": "E-mail: *",
+		"pass": "Password: *",
+		"emailForm": "email",
+		"passForm": "password",
+		"iisAdmin": "Is Admin: ",
+		"placeholderAdmin": "ppl.placeholderAdmin"
+	},
+	"validationMessage": {
+		"fieldRequired": "validationMessage.fieldRequired"
+	},
+	"pat": {
+		"form": {
+			"add": {
+				"pageTitle": "New patient"
+			},
+			"edit": {
+				"pageTitle": "Patient edit"
+			},
+			"addNew": "Add",
+			"editing": "Edit"
+		}
+	},
+	"vis": {
+		"listTitle": "Visit list",
+		"empty": "No visits in the base",
+		"add": "Add visit",
+		"doctor": "Doctor",
+		"patient": "Patient",
+		"date": "Date",
+		"hour": "Hour"
+	},
+	"Wprowadź pensje": "Wprowadź pensje",
+	"Wprowadź właściwą date": "Wprowadź właściwą date",
+	"visit": {
+		"choosePerson": "Choose person from the list",
+		"enterDate": "Enter date",
+		"enterHour": "Choose hour"
+	},
+	"visi": {
+		"doc": "Doctor: *",
+		"pat": "Patient: *",
+		"date": "Date: *",
+		"hour": "Hour: *",
+		"form": {
+			"new": {
+				"pageTitle": "New visit",
+				"btn": "Add visit"
+			},
+			"edit": {
+				"pageTitle": "Edycja wizyty",
+				"btn": "Edit"
+			}
+		},
+		"docChose": "Choose doctor",
+		"patChose": "Choose patient"
+	},
+	"\"isAdmin\" must be a boolean": "\"isAdmin\" must be a boolean",
+	"\"Email\" is not allowed": "\"Email\" is not allowed",
+	"\"Pass\" is not allowed": "\"Pass\" is not allowed",
+	"\"isAdmin\" is not allowed": "\"isAdmin\" is not allowed",
+	"med": {
+		"list": {
+			"list": "Medical services list"
+		},
+		"fields": {
+			"firstName": "med.fields.firstName",
+			"LastName": "med.fields.LastName",
+			"Specialization": "med.fields.Specialization",
+			"Name": "Name",
+			"Price": "Price"
+		},
+		"add": "Add service",
+		"sortedName": "Sort by name",
+		"sortedPrice": "Sort by price",
+		"sortedPriceDesc": "Sort by price desc",
+		"podwyzka": "value",
+		"change": "Change by:",
+		"titlePodwyzka": "Prince change tool",
+		"podwyzkaa": "Change prices",
+		"empty": "med.empty",
+		"form": {
+			"add": {
+				"pageTitle": "Add new medical service"
+			},
+			"addNew": "Add service"
+		},
+		"name": "Name: *",
+		"price": {
+			"err": "Enter price"
+		},
+		"titlePodwyzkaOProcent": "med.titlePodwyzkaOProcent",
+		"podwyzkaoProcnt": "med.podwyzkaoProcnt"
+	},
+	"rea": {
+		"NazwaUslugi": "Medical Service Name",
+		"IleRazy": "Times done"
+	},
+	"\"Salary\" is required": "\"Salary\" is required",
+	"\"EmploymentDate\" is required": "\"EmploymentDate\" is required",
+	"\"Email\" is not allowed to be empty": "\"Email\" is not allowed to be empty",
+	"\"Email\" must be a valid email": "\"Email\" must be a valid email",
+	"\"Pass\" length must be at least 3 characters long": "\"Pass\" length must be at least 3 characters long",
+	"\"Pass\" is required": "\"Pass\" is required",
+	"\"isAdmin\" is required": "\"isAdmin\" is required",
+	"medprice": {
+		"price": "Price: *"
+	},
+	"docd": {
+		"worngPass": "Wrong login or password"
+	}
+}

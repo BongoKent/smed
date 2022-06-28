@@ -1,0 +1,82 @@
+ <%- include('../../fragments/header.ejs') %>
+
+
+    <main>
+        <h2><%= __('med.list.list') %></h2>
+        <p class="succesForm">  <%= __('list.succes') %> 
+        </p>
+        <% if (meds.length && meds.length > 0) { %>
+        <table class="table-list">
+
+            <thead>
+                <tr>
+                    <th><%= __('med.fields.Name') %></th>
+                    <th><%= __('med.fields.Price') %></th>
+                    <th><%= __('list.actions.title') %></th>
+              
+                </tr>
+            </thead>
+
+            <tbody>
+                <% for (let med of meds) { %>
+                <tr>
+                    <td><%= med.Name %></td>
+                    <td><%= med.Price %></td>
+                    <td>
+                        <a href="" class="buttonR button1" onclick="var r = window.confirm('') ; if(r) href ='/medicalService/delete/<%=med.IdMedicalService%>'; else href='javascript:history.go(0)'; " ><%= __('list.actions.delete') %> </a>
+                    </td>
+                </tr>
+            <%}%>
+
+            </tbody>
+        </table>
+        <% } else { %>
+            <p> <%= __('med.empty') %> </p>
+            <% } %>
+        <br>
+        <% if( isAdmin) { %>
+        <a href="medicalService/add" class="buttonR button1">
+            <%= __('med.add') %>
+        </a>
+        <%}%>
+        <a href="/medicalService/sortedByName" class="buttonR button1">
+            <%= __('med.sortedName') %>
+        </a>
+        <a href="/medicalService/sortedByPrice" class="buttonR button1">
+            <%= __('med.sortedPrice') %>
+
+        </a>
+        <a href="/medicalService/sortedByPriceDesc" class="buttonR button1">
+                        <%= __('med.sortedPriceDesc') %>
+        </a>
+
+        <h2><%= __('med.titlePodwyzka') %></h2>
+
+
+        <form class="form" method="post" action="<%= formAction %>" validate >            
+            <label for="Change"><%= __('med.change') %> </label>
+            <input type="number" name="Change" id="Change" required placeholder=<%= __('med.podwyzka') %>"
+           <span id="errorChange" class="errors-text">
+            <% if (validationErrors) { %>
+                <% if (validationErrors.find(e => e.path.includes('Price'))) { %>
+                    <%= validationErrors.find(e => e.path.includes('Price')).message %>
+                <% } %>
+                <% } %>
+             </span>
+
+                <input type="submit" value="<%=btnLabel%>"  class="buttonR button1"/>
+            <p id ="errorsSummary" class="errors-text"></   p>
+      
+        </form>
+        <p class="succesForm">  <%= __('list.succes') %> 
+        </p>
+    </main>
+
+
+   
+</main>
+
+    <%- include('../../fragments/footer.ejs') %>
+
+
+

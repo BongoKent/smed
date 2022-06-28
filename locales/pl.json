@@ -1,0 +1,233 @@
+{
+	"main-page": {
+		"title": "S-Med przychodnia Warszawa",
+		"content": "Nasza przychodnia działa od 1998 roku. Chcemy zapewnić naszym pacjentom opiekę medyczną na najwyższym pozioie. W chwili obecnej w S-Med pracuje 100 lekarzy, w tym 10 profesorów. W naszej kadrze znajdują się wybitni specjaliści z wieloltenim doświadczeniem. Dysponujemy nowoczesną, doskonale wyposażoną salą operacyjną oraz sprzętem diagnostycznym najwyższej klasy. Nasza placówka jest czynna 6 dni w tygodniu od 7:00 do 20:00. Zapraszamy do skorzystania z naszych usług.",
+		"titleFooter": "S-Med Warszawa",
+		"login": "Logowanie",
+		"email": "Email: ",
+		"password": "Hasło: ",
+		"loginsie": "Zaloguj się",
+		"register": "Zarejestruj się",
+		"looggedas": "Zalogowany jako:  ",
+		"logout": "Wyloguj"
+	},
+	"nav": {
+		"main-page": "Strona główna",
+		"doctors": "Lekarze",
+		"visits": "Wizyty",
+		"patients": "Pacjenci",
+		"meds": "Usługi medyczne",
+		"rea": "Realizacje"
+	},
+	"list": {
+		"actions": {
+			"title": "Akcje",
+			"details": "Szczegóły",
+			"edit": "Edytuj",
+			"delete": "Usuń",
+			"disease": "Schorzenie",
+			"addPatient": "Dodaj pacjenta",
+			"patientNull": "Brak pacjentów w bazie",
+			"editAdmin": "Edycja admin"
+		},
+		"succes": "Operacja przeprowadzona pomyślnie!",
+		"patient": {
+			"Title": "Lista pacjetów"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Powrót",
+			"edit": "Edytuj",
+			"cancel": "Anuluj",
+			"back": "form.actions.back"
+		},
+		"edit": "Edytuj lekarza",
+		"addNew": "Dodaj lekarza",
+		"addNewRegister": "Zarejestruj się",
+		"editDoc": "form.editDoc"
+	},
+	"doc": {
+		"fields": {
+			"firstName": "Imię",
+			"LastName": "Nazwisko",
+			"Salary": "Pensja",
+			"Specialization": "Specjalizacja",
+			"EmploymentDate": "Data zatrudnienia"
+		},
+		"list": {
+			"title": "Lekarze",
+			"addNew": "Dodaj nowego lekarza",
+			"noData": "Brak pracowników w bazie",
+			"pageTitle": "Lista pracowników",
+			"list": "Lista lekarzy"
+		},
+		"form": {
+			"employment": "Historia zatrudnienia",
+			"add": {
+				"pageTitle": "Dodawanie lekarza",
+				"btnLabel": "Dodaj pracownika",
+				"confirm": {
+					"header": "Potwierdzenie operacji",
+					"text": "Pomyślnie dodano pracownika"
+				},
+				"pageTitleRegister": "Zarejestruj się "
+			},
+			"edit": {
+				"pageTitle": "Edycja lekarza",
+				"btnLabel": "Zapisz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie operacji",
+					"text": "Pomyślnie zaktualizowano pracownika"
+				}
+			},
+			"details": {
+				"pageTitle": "Szczegóły lekarza"
+			},
+			"addNew": "Dodaj lekarza",
+			"register": {
+				"pageTitle": "Zarejestruj się"
+			}
+		},
+		"add": "Dodaj lekarza",
+		"errors": "doc.errors",
+		"empty": "Brak lekarzy w bazie",
+		"error": {
+			"req": "Pole jest wymagane",
+			"sal": "Wprowadź pensje",
+			"data": "Wprowadź właściwą date",
+			"znakimin": "Minimalnie 3 znaki",
+			"znakimax": "Maksymalnie 30 znaków",
+			"email": "Wprowadź właściwy email"
+		}
+	},
+	"ppl": {
+		"name": "Imie: *",
+		"lastname": "Nazwisko: *",
+		"salary": "Pensja: *",
+		"spec": "Specjalizacja: ",
+		"date": "Data zatrudnienia: *",
+		"optional": "opcjonalne",
+		"chars": "3-30 znaków",
+		"sal": "wartość",
+		"ill": "Schorzenie: ",
+		"email": "Email: *",
+		"pass": "Hasło: *",
+		"emailForm": "email",
+		"passForm": "hasło",
+		"iisAdmin": "Czy admin: ",
+		"placeholderAdmin": "ppl.placeholderAdmin"
+	},
+	"emp": {
+		"form": {
+			"edit": {
+				"pageTitle": "emp.form.edit.pageTitle"
+			}
+		}
+	},
+	"validationMessage": {
+		"fieldRequired": "validationMessage.fieldRequired"
+	},
+	"pat": {
+		"form": {
+			"add": {
+				"pageTitle": "Nowy pacjent"
+			},
+			"edit": {
+				"pageTitle": "Edycja pacjenta"
+			},
+			"addNew": "Dodaj",
+			"editing": "Edytuj"
+		}
+	},
+	"vis": {
+		"listTitle": "Lista wizyt",
+		"empty": "Brak wizyt w bazie",
+		"add": "Dodaj wizyte",
+		"doctor": "Lekarz",
+		"patient": "Pacjent",
+		"date": "Data",
+		"hour": "Godzina"
+	},
+	"Wprowadź pensje": "Wprowadź pensje",
+	"Wprowadź właściwą date": "Wprowadź właściwą date",
+	"\"Salary\" is required": "\"Salary\" is required",
+	"\"EmploymentDate\" is required": "\"EmploymentDate\" is required",
+	"\"Name\" is required": "\"Name\" is required",
+	"\"LastName\" is required": "\"LastName\" is required",
+	"Data zatrudnienia nie może być z przyszłości": "Data zatrudnienia nie może być z przyszłości",
+	"visit": {
+		"choosePerson": "Wybierz osobę z listy",
+		"enterDate": "Wprowadź date",
+		"enterHour": "Wybierz godzinę"
+	},
+	"visi": {
+		"doc": "Lekarz: *",
+		"pat": "Pacjent: *",
+		"date": "Data: *",
+		"hour": "Godzina: *",
+		"form": {
+			"new": {
+				"pageTitle": "Nowa wizyta",
+				"btn": "Dodaj wizyte"
+			},
+			"edit": {
+				"pageTitle": "Visit editor",
+				"btn": "Edytuj"
+			}
+		},
+		"docChose": "Wybierz lekarza",
+		"patChose": "Wybierz pacjenta"
+	},
+	"\"isAdmin\" must be a boolean": "\"isAdmin\" must be a boolean",
+	"\"isAdmin\" is not allowed": "\"isAdmin\" is not allowed",
+	"\"Email\" is not allowed": "\"Email\" is not allowed",
+	"\"Pass\" is not allowed": "\"Pass\" is not allowed",
+	"med": {
+		"list": {
+			"list": "Lista uług medycznych"
+		},
+		"fields": {
+			"firstName": "med.fields.firstName",
+			"LastName": "med.fields.LastName",
+			"Specialization": "med.fields.Specialization",
+			"Name": "Nazwa usługi",
+			"Price": "Cena usługi"
+		},
+		"add": "Dodaj",
+		"sortedName": "Sortuj po nazwie",
+		"sortedPrice": "Sortuj po cenie rosnąco",
+		"sortedPriceDesc": "Sortuj po cenie malejąco",
+		"podwyzka": "wartość",
+		"change": "Zmiana o: ",
+		"titlePodwyzka": "Narzędznie zmiany cen o wartość",
+		"podwyzkaa": "Zmiana",
+		"empty": "med.empty",
+		"form": {
+			"add": {
+				"pageTitle": "Dodawanie usługi medycznej"
+			},
+			"addNew": "Dodaj"
+		},
+		"name": "Nazwa: *",
+		"price": {
+			"err": "Wprowadź cenę"
+		},
+		"titlePodwyzkaOProcent": "med.titlePodwyzkaOProcent",
+		"podwyzkaoProcnt": "med.podwyzkaoProcnt"
+	},
+	"rea": {
+		"NazwaUslugi": "Nazwa usługi",
+		"IleRazy": "Ile razy wykonana"
+	},
+	"\"Email\" must be a valid email": "\"Email\" must be a valid email",
+	"\"Pass\" length must be at least 3 characters long": "\"Pass\" length must be at least 3 characters long",
+	"\"isAdmin\" is required": "\"isAdmin\" is required",
+	"medprice": {
+		"price": "Cena: *"
+	},
+	"\"value\" must be of type object": "\"value\" must be of type object",
+	"docd": {
+		"worngPass": "Zły login lub hasło"
+	}
+}

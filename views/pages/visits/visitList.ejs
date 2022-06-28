@@ -1,0 +1,51 @@
+<%- include('../../fragments/header.ejs') %>
+
+
+    <main>
+        <h2><%= __('vis.listTitle') %></h2>
+        <% if (visits.length && visits.length > 0) { %>
+
+        <table class="table-list">
+
+            <thead>
+                <tr>
+                    <th><%= __('vis.doctor') %></th>
+                    <th><%= __('vis.patient') %></th>
+                    <th><%= __('vis.date') %></th>
+                    <th><%= __('vis.hour') %></th>
+                    <th><%= __('list.actions.title') %></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let visit of visits) { %>
+                    
+                <tr>
+                    <td><%= "Dr. "+ visit.docName + " " + visit.docLastName  %></td>
+                    <td><%= visit.patientName + " " + visit.patientLastName  %></td>
+                    <td><%= visit.DateVisit.toISOString().split('T')[0] %></td>
+                    <td><%= visit.DateVisit.toISOString().split('T')[1].split('.')[0] %></td>
+
+                    <td>
+                        <% if(loggedUser.Email == visit.IdDoctora || isAdmin) { %>
+                        <a href="/visits/edit/<%= visit.IdVisit %>" class="buttonR button1"><%= __('list.actions.edit') %></a>
+                        <a href="" class="buttonR button1" onclick="var r = window.confirm('Czy napewno?') ; if(r) href ='/visits/delete/<%=visit.IdVisit%>'; else href='javascript:history.go(0)'; " ><%= __('list.actions.delete') %></a>
+                        <%}%>
+                    </td>
+                </tr>
+            <%}%>
+            </tbody>
+        </table>
+        <% } else { %>
+                <p>  <%= __('vis.empty') %> </p>
+                <% } %>
+        <br>
+        <a href="visits/add" class="buttonR button1">
+            <%= __('vis.add') %>
+        </a>
+        <a class="succesForm"><%=alert %></a>
+
+       
+    </main>
+
+    <%- include('../../fragments/footer.ejs') %>
+    

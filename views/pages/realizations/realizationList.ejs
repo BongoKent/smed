@@ -1,0 +1,34 @@
+<%- include('../../fragments/header.ejs') %>
+
+
+    <main>
+        
+        <% for (let doc of docs) { %>
+            <% if  (loggedUser.Email == doc.Email || isAdmin) { %>
+            <h2><%= doc.Name %> <%= doc.LastName %></h2>
+            <table class="table-list">
+                <thead>
+                    <tr>
+                        <th><%= __('rea.NazwaUslugi') %></th>
+                        <th><%= __('rea.IleRazy') %></th>
+                  
+                    </tr>
+                </thead> 
+            <% for (let realization of realizations) { %>
+                <% if(realization.IdDoctora == doc.IdDoctor)  { %>
+                    <tbody>
+                        <tr>
+                            <td><%= realization.MedicalServiceName %></td>
+                            <td><%= realization.RealizationCount %></td>
+                        </tr>
+                    </tbody>
+                <% } %>
+
+            <% } %>
+        </table> 
+        <% } %>
+        <% } %>
+    </main>
+
+    <%- include('../../fragments/footer.ejs') %>
+

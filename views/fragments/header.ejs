@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../..//css/style.css" />
+    <title><%= __('nav.main-page') %>
+    </title>
+</head>
+
+<body>
+    <header>
+        <h1><%= __('main-page.title') %></h1>
+        <img src="/images//logo.png" alt="logo" width="150" height="100">
+    </header>
+
+
+    <nav>
+        <ul>
+            <li><a href="/" class="<%= navLocation == 'main' ? 'active' : ''%>"><%= __('nav.main-page') %></a></li>
+            <% if(loggedUser) { %>
+            <li><a href="/doctors" class="<%= navLocation == 'doc' ? 'active' : ''%>"><%= __('nav.doctors') %></a></li>
+            <li><a href="/visits" class="<%= navLocation == 'visit' ? 'active' : ''%>"><%= __('nav.visits') %></a></li>
+            <li><a href="/patients" class="<%= navLocation == 'pat' ? 'active' : ''%>"><%= __('nav.patients') %></a></li>
+            <li><a href="/medicalService" class="<%= navLocation == 'med' ? 'active' : ''%>"><%= __('nav.meds') %></a></li>
+            <li><a href="/realizations" class="<%= navLocation == 'rea' ? 'active' : ''%>"><%= __('nav.rea') %></a></li>
+            <% } %>
+            <li><a href="/changeLang/pl" class="<%= lang == 'pl' ? 'active' : ''%>">PL</a></li>
+            <li><a href="/changeLang/en" class="<%= lang == 'en' ? 'active' : ''%>">EN</a></li>
+
+
+
+         
+    <% if(!loggedUser) { %>
+        <div id="login">
+            <form class="loginform" method="post" action="/login" novalidate>
+                <label for="loginPhonenum">&emsp;<%= __('main-page.email') %> </label>
+                <input type="text" name="Email" id="Email">
+             
+                <label for="loginPassword"><%= __('main-page.password') %> </label>
+                <input type="password" id="Pass" name="Pass">
+                
+                <input class="button122" type="submit" value="<%= __('main-page.loginsie') %>">
+                <span id="loginErrors">
+                    <%= loginError ? loginError : '' %>
+                </span>
+                <br>
+
+            </form>
+        </div>
+        <a class="buttonR2 button12 " href=" /register">&emsp;<%= __('main-page.register') %></a>
+
+        <% } else { %>
+            <span  class="loginform registerclass">&emsp;<%= __('main-page.looggedas') %><%=loggedUser.Name + " " +loggedUser.LastName+" "%> </span>
+            <br>
+            <a class="buttonR2 button12"  href=" /logout">&emsp;<%= __('main-page.logout') %></a>
+                    <% } %>
+
+        </ul>
+
+       
+        
+    </nav>
+    
+    

@@ -1,0 +1,72 @@
+<%- include('../../fragments/header.ejs') %>
+
+    <main>
+        <h2><%= pageTitle %></h2>
+        
+        <form class="form" method="post" action="<%= formAction %>" novalidate >
+            <input type="hidden" for="IdDoctor" name="IdDoctor" id="IdDoctor" value="<%= doc.IdDoctor %>">
+            
+            <label for="Name"><%= __('ppl.name') %> </label>
+            <input type="text" name="Name" id="Name" required placeholder=<%= __('ppl.chars') %> value="<%=doc.Name%>"
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorName" class="errors-text">
+                <% if (validationErrors) { %>
+                    <% if (validationErrors.find(e => e.path.includes('Name'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('Name')).message %>
+                    <% } %>
+                    <% } %>
+             </span>
+
+            <label for="LastName"><%= __('ppl.lastname') %></label>
+            <input type="text" name="LastName" id="LastName" required placeholder=<%= __('ppl.chars') %> value="<%= doc.LastName %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorLastName" class="errors-text">
+                <% if (validationErrors) { %>
+                    <% if (validationErrors.find(e => e.path.includes('LastName'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('LastName')).message %>
+                    <% } %>
+                    <% } %>
+             </span>
+
+             <label for="Email"><%= __('ppl.email') %></label>
+             <input type="text" name="Email" id="Email" required placeholder=<%= __('ppl.emailForm') %> value="<%= doc.Email %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+             <span id="errorEmail" class="errors-text">
+                <% if (validationErrors) { %>
+                    <% if (validationErrors.find(e => e.path.includes('Email'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('Email')).message %>
+                    <% } %>
+                    <% } %>
+              </span>
+             
+              <label for="Pass"><%= __('ppl.pass') %></label>
+              <input type="password" name="Pass" id="Pass" required placeholder=<%= __('ppl.passForm') %> value="<%= doc.Pass %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+              <span id="errorPassword" class="errors-text">
+                <% if (validationErrors) { %>
+                    <% if (validationErrors.find(e => e.path.includes('Pass'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('Pass')).message %>
+                    <% } %>
+                    <% } %>
+               </span>
+           
+               <input type="hidden" for="isAdmin" name="isAdmin" id="isAdmin" value='0'>
+
+
+            <% if (formMode != 'showDetails') { %>
+            <input type="submit" value="<%=btnLabel%>"  class="buttonR button1"/>
+             <a href="/" class="buttonR button1"> <%= __('form.actions.cancel') %>  </a>
+             <% } else { %>
+                <a href="/" class="buttonR button1"> <%= __('form.actions.return') %></a>
+                <% } %>
+        <p id ="errorsSummary" class="errors-text"></p>
+    
+      
+        </form>
+      
+   
+  
+
+    </main>
+
+    <%- include('../../fragments/footer.ejs') %>
+
+    <script type="application/javascript" src="../../../js/validationCommon.js"></script>
+    <script type="application/javascript" src="../../../js/validationDocAddForm.js"></script>

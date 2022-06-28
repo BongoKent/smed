@@ -1,0 +1,98 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+  <h2><%=pageTitle %></h2>
+
+    <form class="form" method="post" action="<%= formAction %>" novalidate >
+      <input type="hidden" for="IdVisit" name="IdVisit" id="IdVisit" value="<%= r_visit.IdVisit %>">
+
+        <label for="IdDoctor"><%= __('visi.doc') %></span></label>
+        <select name="IdDoctor" id="IdDoctor" required <%= (formMode === 'showDetails') ? 'disabled':''%> >
+          <option selected="selected"><%= __('visi.docChose') %></option>
+          <% for (let doctor of allDoctors) { %>
+            <% if(loggedUser.Email == doctor.Email || isAdmin) { %>
+          <option value="<%=doctor.IdDoctor%>"  <%= (doctor.IdDoctor == r_visit.IdDoctor) ? 'selected':'' %> > <%=doctor.Name%> <%=doctor.LastName%> (#<%=doctor.IdDoctor%>) </option>
+          <%}%>
+          <%}%>
+        </select>
+        <span id="errorIdDoctor"  class="errors-text">
+          <% if (validationErrors) { %>
+            <% if (validationErrors.find(e => e.path.includes('IdDoctor'))) { %>
+                <%= validationErrors.find(e => e.path.includes('IdDoctor')).message %>
+            <% } %>
+            <% } %>
+        </span>
+     
+        
+      <label for="IdPatient"><%= __('visi.pat') %></span></label>
+      <select name="IdPatient" id="IdPatient" required <%= (formMode === 'showDetails') ? 'disabled':''%> >
+        <option selected="selected"><%= __('visi.patChose') %></option>
+        <% for (let patient of allPatients) { %>
+          <option value="<%=patient.IdPatient%>"  <%= (patient.IdPatient == r_visit.IdPatient) ? 'selected':'' %> > <%=patient.Name%> <%=patient.LastName%> (#<%=patient.IdPatient%>) </option>
+        <%}%>
+      </select>
+      <span id="errorIdPatient"  class="errors-text">
+        <% if (validationErrors) { %>
+          <% if (validationErrors.find(e => e.path.includes('IdPatient'))) { %>
+              <%= validationErrors.find(e => e.path.includes('IdPatient')).message %>
+          <% } %>
+          <% } %>
+        
+      </span>
+    
+      <label for="DateVisit"><%= __('visi.date') %></label>
+      <% if(formMode == 'createNew'){ %>
+      <input type="date" name="DateVisit" required id="DateVisit" placeholder="dd.mm.rrrr" value="<%= r_visit.DateVisit  %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+          <% } else { %>
+      <input type="date" name="DateVisit"  required id="DateVisit" placeholder="dd.mm.rrrr" value="<%= r_visit.DateVisit %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+          <% } %>
+      <span id="errorDateVisit" class="errors-text">
+        <% if (validationErrors) { %>
+          <% if (validationErrors.find(e => e.path.includes('DateVisit'))) { %>
+              <%= validationErrors.find(e => e.path.includes('DateVisit')).message %>
+          <% } %>
+          <% } %>
+
+
+      </span>
+
+      <label for="TimeVisit"><%= __('visi.hour') %></label>
+      <% if(formMode == 'createNew'){ %>
+        <input type="time" name="TimeVisit"  required id="TimeVisit" value ="<%= r_visit.TimeVisit %>" >
+        <% } else { %>
+        <input type="time" name="TimeVisit"  required id="TimeVisit"  value ="<%= r_visit.TimeVisit %>">
+        <% } %>
+
+      <span id="errorTimeVisit" class="errors-text">
+        <% if (validationErrors) { %>
+          <% if (validationErrors.find(e => e.path.includes('TimeVisit'))) { %>
+              <%= validationErrors.find(e => e.path.includes('TimeVisit')).message %>
+          <% } %>
+          <% } %>
+
+      </span>
+     
+      <% if (formMode != 'showDetails') { %>
+        <% if (validationErrors) { %>
+        <% if ( (validationErrors.find(e => e.path.includes('IdDoctor'))) || (validationErrors.find(e => e.path.includes('IdPatient'))) || (validationErrors.find(e => e.path.includes('DateVisit'))) || (validationErrors.find(e => e.path.includes('TimeVisit')))  )  { %>
+        <input type="submit" value="<%=btnLabel%>"  class="buttonR button1"/>
+        <% } else { %>
+          <input type="submit" value="<%=btnLabel%>"  class="buttonR button1"  />
+          <% } %>
+          <% } %>
+         <a href="/visits" class="buttonR button1"> <%= __('form.actions.cancel') %>  </a> 
+         <% } else { %>
+            <a href="/visits" class="buttonR button1"> <%= __('form.actions.return') %> </a>
+            <% } %>
+    <p id ="errorsSummary" class="errors-text"></p>
+
+
+  </form> 
+  
+
+</main>
+<%- include('../../fragments/footer.ejs') %>
+
+
+
+<script type="application/javascript" src="../../../js/validationCommon.js"></script>
+<script type="application/javascript" src="../../../js/validationVisitForm.js"></script>

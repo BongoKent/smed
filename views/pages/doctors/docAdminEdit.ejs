@@ -1,0 +1,60 @@
+<%- include('../../fragments/header.ejs') %>
+
+    <main>
+        <h2><%= pageTitle %></h2>
+        
+        <form class="form" method="post" action="<%= formAction %>" novalidate >
+            <input type="hidden" for="IdDoctor" name="IdDoctor" id="IdDoctor" value="<%= doc.IdDoctor %>">
+            <input type="hidden" for="Name" name="Name" id="Name" value="<%= doc.Name %>">
+            <input type="hidden" for="LastName" name="LastName" id="LastName" value="<%= doc.LastName %>">
+
+            <label for="Email"><%= __('ppl.email') %></label>
+            <input type="text" name="Email" id="Email" required placeholder=<%= __('ppl.emailForm') %> value="<%= doc.Email %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorEmail" class="errors-text">
+                <% if (validationErrors) { %>
+                    <% if (validationErrors.find(e => e.path.includes('Email'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('Email')).message %>
+                    <% } %>
+                    <% } %>
+             </span>
+            
+             <label for="Pass"><%= __('ppl.pass') %></label>
+             <input type="password" name="Pass" id="Pass" required placeholder=<%= __('ppl.passForm') %> value="<%= doc.Pass %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+             <span id="errorPass" class="errors-text">
+                <% if (validationErrors) { %>
+                    <% if (validationErrors.find(e => e.path.includes('Pass'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('Pass')).message %>
+                    <% } %>
+                    <% } %>
+              </span>
+              <% if( isAdmin) { %>
+              <label  for="idAdmin"><%= __('ppl.iisAdmin') %></label>
+              <input type="text" name="isAdmin" id="isAdmin" required placeholder=<%= __('ppl.placeholderAdmin') %> value="<%= doc.isAdmin %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+              <span id="errorisAdmin" class="errors-text">
+                <% if (validationErrors) { %>
+                    <% if (validationErrors.find(e => e.path.includes('isAdmin'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('isAdmin')).message %>
+                    <% } %>
+                    <% } %>
+               </span>
+
+               <% } %>
+               <% if (formMode != 'showDetails') { %>
+                <input type="submit" value="<%=btnLabel%>"  class="buttonR button1"/>
+                 <a href="/doctors" class="buttonR button1"> <%= __('form.actions.cancel') %>  </a>
+                 <% } else { %>
+                    <a href="/doctors" class="buttonR button1"> <%= __('form.actions.return') %></a>
+                    <% } %>
+            <p id ="errorsSummary" class="errors-text"></p>
+      
+        </form>
+      
+   
+  
+
+    </main>
+
+    <%- include('../../fragments/footer.ejs') %>
+
+    <script type="application/javascript" src="../../../js/validationCommon.js"></script>
+    <script type="application/javascript" src="../../../js/validationDocAddForm.js"></script>

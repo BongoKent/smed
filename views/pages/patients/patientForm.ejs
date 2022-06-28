@@ -1,0 +1,54 @@
+<%- include('../../fragments/header.ejs') %>
+
+    <main>
+        <h2><%= pageTitle %></h2>
+        
+        <form class="form" method="post" action="<%= formAction %>" novalidate ">
+            <input type="hidden" for="IdPatient" name="IdPatient" id="IdPatient" value="<%= patient.IdPatient %>">
+
+            <label for="Name"><%= __('ppl.name') %></label>
+            <input type="text" name="Name" id="Name" required placeholder="3-30" value="<%=patient.Name%>"
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorName" class="errors-text">
+                <% if (validationErrors) { %>
+                    <% if (validationErrors.find(e => e.path.includes('Name'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('Name')).message %>
+                    <% } %>
+                    <% } %>
+            </span>
+
+            <label for="LastName"><%= __('ppl.lastname') %></label>
+            <input type="text" name="LastName" id="LastName" required placeholder="3-30" value="<%= patient.LastName %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorLastName" class="errors-text">
+                <% if (validationErrors) { %>
+                    <% if (validationErrors.find(e => e.path.includes('LastName'))) { %>
+                        <%= validationErrors.find(e => e.path.includes('LastName')).message %>
+                    <% } %>
+                    <% } %>
+            </span>
+
+            <label for="Disease"><%= __('ppl.ill') %></label>
+            <input type="text" name="Disease" id="Disease" placeholder=<%= __('ppl.optional') %> value="<%= patient.Disease %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorDisease" class="errors-text"></span>
+
+            <% if (formMode != 'showDetails') { %>
+            <input type="submit" value="<%=btnLabel%>"  class="buttonR button1"/>
+             <a href="/patients" class="buttonR button1"> <%= __('form.actions.cancel') %> </a>
+             <% } else { %>
+                <a href="/patients" class="buttonR button1"><%= __('form.actions.return') %></a>
+                <% } %>
+        <p id ="errorsSummary" class="errors-text"></p>
+    
+      
+        </form>
+      
+   
+  
+
+    </main>
+
+    <%- include('../../fragments/footer.ejs') %>
+
+  
+<script type="application/javascript" src="../../../js/validationCommon.js"></script>
+<script type="application/javascript" src="../../../js/validationPatientForm.js"></script>

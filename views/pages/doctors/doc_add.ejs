@@ -1,0 +1,77 @@
+<%- include('../../fragments/header.ejs') %>
+
+    <main>
+        <h2><%= pageTitle %></h2>
+        
+        <form class="form" method="post" action="<%= formAction %>" novalidate >
+            <input type="hidden" for="IdDoctor" name="IdDoctor" id="IdDoctor" value="<%= doc.IdDoctor %>">
+            
+            <label for="Name"><%= __('ppl.name') %> </label>
+            <input type="text" name="Name" id="Name" required placeholder=<%= __('ppl.chars') %> value="<%=doc.Name%>"
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorName" class="errors-text">
+            <% if (validationErrors) { %>
+            <% if (validationErrors.find(e => e.path.includes('Name'))) { %>
+                <%= validationErrors.find(e => e.path.includes('Name')).message %>
+            <% } %>
+            <% } %>
+             </span>
+
+            <label for="LastName"><%= __('ppl.lastname') %></label>
+            <input type="text" name="LastName" id="LastName" required placeholder=<%= __('ppl.chars') %> value="<%= doc.LastName %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorLastName" class="errors-text">
+            <% if (validationErrors) { %>
+            <% if (validationErrors.find(e => e.path.includes('LastName'))) { %>
+                <%= validationErrors.find(e => e.path.includes('LastName')).message %>
+            <% } %>
+            <% } %>
+             </span>
+             <% if( isAdmin || formMode == 'showDetails') { %>
+            <label for="Salary"><%= __('ppl.salary') %></label>
+            <input type="number" name="Salary" id="Salary" required placeholder=<%= __('ppl.sal') %> value="<%= doc.Salary %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorSalary" class="errors-text">
+             <% if (validationErrors) { %>
+            <% if (validationErrors.find(e => e.path.includes('Salary'))) { %>
+                <%= validationErrors.find(e => e.path.includes('Salary')).message %>
+            <% } %>
+            <% } %>
+             </span>
+             <% } %>
+            <label for="Specialization"><%= __('ppl.spec') %></label>
+            <input type="text" name="Specialization" id="Specialization" placeholder=<%= __('ppl.optional') %> value="<%= doc.Specialization %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+            <span id="errorEmploymentDate" class="errors-text"></span>
+       
+            <label for  ="EmploymentDate"><%= __('ppl.date') %></label>
+            <% if(formMode == 'createNew'){ %>
+            <input type="date" name="EmploymentDate"  id="EmploymentDate" placeholder="dd.mm.rrrr" value="<%= doc.EmploymentDate  %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+                <% } else { %>
+            <input type="date" name="EmploymentDate"  id="EmploymentDate" placeholder="dd.mm.rrrr" value="<%= doc.EmploymentDate  %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %>/>
+                <% } %>
+            <span id="errorEmploymentDate" class="errors-text">
+             <% if (validationErrors) { %>
+            <% if (validationErrors.find(e => e.path.includes('EmploymentDate'))) { %>
+                <%= validationErrors.find(e => e.path.includes('EmploymentDate')).message %>
+            <% } %>
+            <% } %>
+             </span>           
+        
+
+            <% if (formMode != 'showDetails') { %>
+            <input  type="submit" value="<%=btnLabel%>"  class="buttonR button1 textIndent"/>
+             <a href="/doctors" class="buttonR button1"> <%= __('form.actions.cancel') %>  </a>
+             <% } else { %>
+                <a href="/doctors" class="buttonR button1 "> <%= __('form.actions.return') %></a>
+                <% } %>
+        <p id ="errorsSummary" class="errors-text"></p>
+    
+      
+        </form>
+      
+   
+  
+
+    </main>
+
+    <%- include('../../fragments/footer.ejs') %>
+
+  
